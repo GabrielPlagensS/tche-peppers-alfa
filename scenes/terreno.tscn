@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://bmx8emouf4xbl"]
+[gd_scene load_steps=18 format=4 uid="uid://bmx8emouf4xbl"]
 
 [ext_resource type="Texture2D" uid="uid://dhfm22g1pbbo4" path="res://tilemap/tile_floor.png" id="1_8uhu6"]
 [ext_resource type="Texture2D" uid="uid://b3t16e3mxiyvu" path="res://tilemap/gentle tree wall.png" id="2_eifp5"]
 [ext_resource type="Texture2D" uid="uid://4pht4rr2wibj" path="res://tilemap/planetario reduzido.png" id="3_y8url"]
 [ext_resource type="PackedScene" uid="uid://dp1x6bmwoerk2" path="res://scenes/character_body_2d.tscn" id="4_eifp5"]
-[ext_resource type="PackedScene" uid="uid://b3kyx6n7rmomi" path="res://scenes/arvore1.tscn" id="5_y8url"]
+[ext_resource type="PackedScene" uid="uid://b4kavx1v1772u" path="res://scenes/arvore_01.tscn" id="5_44wwh"]
+[ext_resource type="PackedScene" uid="uid://c2k1clv4qvo1g" path="res://scenes/arvore_02.tscn" id="6_wu7t7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44wwh"]
 texture = ExtResource("1_8uhu6")
@@ -2468,8 +2469,11 @@ sources/0 = SubResource("TileSetAtlasSource_3lsu3")
 texture = ExtResource("3_y8url")
 1:4/size_in_atlas = Vector2i(23, 16)
 1:4/0 = 0
+1:4/0/y_sort_origin = -40
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-72, -88, -43.2, -94.4, 4.8, -97.6, 56, -91.2, 97.6, -78.4, 132.8, -59.2, 152, -43.2, 161.6, -27.2, 140, -20, 161.6, 8, 174.4, 33.6, 177.6, 46.4, 177.6, 49.6, 155.2, 46.4, 136, 60, 132.8, 97.6, 123.2, 97.6, 112, 88, 92, 92, 68, 100, 48, 120, 44, 120, 36, 108, 24, 100, -24, 100, -36, 100, -44, 120, -48, 120, -48, 104, -100, 88, -124, 96, -132, 96, -124, 68, -144, 44, -177.6, 46.4, -168, 20.8, -139.2, -20.8, -161.6, -27.2, -144, -52, -116.8, -68.8, -100.8, -78.4)
 
 [sub_resource type="TileSet" id="TileSet_wwh5e"]
+physics_layer_0/collision_layer = 1
 sources/4 = SubResource("TileSetAtlasSource_csdg6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eifp5"]
@@ -2510,6 +2514,7 @@ tile_map_data = PackedByteArray("AAATABsAAAAHABAAAAAUABsAAAAIABAAAAAVABsAAAAHABA
 tile_set = SubResource("TileSet_mbjo1")
 
 [node name="planetario" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAsAAwABAABAAQAAAA=")
 tile_set = SubResource("TileSet_wwh5e")
 
@@ -2526,8 +2531,14 @@ y_sort_origin = 18
 [node name="CharacterBody2D" parent="arbusto" instance=ExtResource("4_eifp5")]
 position = Vector2(352, 568)
 
-[node name="arvore1" parent="." instance=ExtResource("5_y8url")]
+[node name="arvore_01-1" parent="." instance=ExtResource("5_44wwh")]
+position = Vector2(792, 360)
+
+[node name="arvore_01-2" parent="." instance=ExtResource("5_44wwh")]
 position = Vector2(640, 360)
 
-[node name="arvore2" parent="." instance=ExtResource("5_y8url")]
-position = Vector2(792, 360)
+[node name="arvore_02-1" parent="." instance=ExtResource("6_wu7t7")]
+position = Vector2(416, 112)
+
+[node name="arvore_02-2" parent="." instance=ExtResource("6_wu7t7")]
+position = Vector2(1016, 192)
